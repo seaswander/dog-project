@@ -16050,7 +16050,8 @@ dog : 11%
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Question 2:</strong> This algorithmic choice necessitates that we communicate to the user that we accept human images only when they provide a clear view of a face (otherwise, we risk having unneccessarily frustrated users!). In your opinion, is this a reasonable expectation to pose on the user? If not, can you think of a way to detect humans in images that does not necessitate an image with a clearly presented face?</p>
 <p><strong>Answer:</strong></p>
-<p>We suggest the face detector from OpenCV as a potential way to detect human images in your algorithm, but you are free to explore other approaches, especially approaches that make use of deep learning :).  Please use the code cell below to design and test your own face detection algorithm.  If you decide to pursue this <em>optional</em> task, report performance on each of the datasets.</p>
+<p>This is not a acceptable exception. The algorithm should not restrict user input in human images only.</p>
+<p>As we know most human faces are made of similar features, so we can try seperate the patterns of those features. Once features like, human eyes, human nose, human mouse are found, we can be sure of a human face.</p>
 
 </div>
 </div>
@@ -16059,16 +16060,7 @@ dog : 11%
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer 2:</strong></p>
-<p>A clearly presented face is not an acceptable premise in real-life scenarios. This can be obviated in many ways.
-If utilizing haar-cascades, you can include other xml cascade files that also account for profile or skewed views, 
-or even create your own, OpenCV has a train-cascade facility for that. However, this process is time consuming and not
-nearly as accurate as constructing a deep learning network. In the above example, I built a deep neural network with
-2 groups of CONV-RELU-POOL layers, a GAP layer to gather the best features and flatten the data, then two FC layers
-with a softmax activation for the final classification. The example above is a proof-of-concept, run over a tiny 200
-images dataset (100 humans and 100 dogs) and over only 200 epochs. This took roughly 2 hours to train and yielded and 
-accuracy of 98.5%.
-Out of curiosity, it seems the majority of the error lies in humans being mistaken for dogs.</p>
+<p>We suggest the face detector from OpenCV as a potential way to detect human images in your algorithm, but you are free to explore other approaches, especially approaches that make use of deep learning :).  Please use the code cell below to design and test your own face detection algorithm.  If you decide to pursue this <em>optional</em> task, report performance on each of the datasets.</p>
 
 </div>
 </div>
